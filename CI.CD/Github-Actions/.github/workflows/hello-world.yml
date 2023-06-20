@@ -1,0 +1,23 @@
+name: Hello Word
+
+on:
+   push:
+      branches: [main]
+   pull_request:
+      types: [opened, reopened, synchronize]
+   workflow_dispatch:
+
+jobs:
+   get-user-name:
+      name: Get user name
+      runs-on: ubuntu-latest
+      steps:
+         # store USER variable in the environment (GITHUB_ENV)
+         - run: echo "USER=$(whoami)" >> $GITHUB_ENV
+   say-hello:
+      name: Say hello
+      runs-on: ubuntu-latest
+      steps:
+         - run: echo "TODAY=$(date +%y-%m-%d)" >> $GITHUB_ENV
+         # use the USER variable from the environment (GITHUB_ENV)
+         - run: echo $USER - Hello world
