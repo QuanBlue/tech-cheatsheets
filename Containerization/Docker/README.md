@@ -8,30 +8,30 @@
 
 <!-- Badges -->
 <p align="center">
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/QuanBlue/Tech-Cheatsheets" alt="contributors" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/quanblue/tech-cheatsheets" alt="contributors" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/QuanBlue/Tech-Cheatsheets" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/quanblue/tech-cheatsheets" alt="last update" />
   </a>
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/network/members">
-    <img src="https://img.shields.io/github/forks/QuanBlue/Tech-Cheatsheets" alt="forks" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/network/members">
+    <img src="https://img.shields.io/github/forks/quanblue/tech-cheatsheets" alt="forks" />
   </a>
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/stargazers">
-    <img src="https://img.shields.io/github/stars/QuanBlue/Tech-Cheatsheets" alt="stars" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/stargazers">
+    <img src="https://img.shields.io/github/stars/quanblue/tech-cheatsheets" alt="stars" />
   </a>
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/issues/">
-    <img src="https://img.shields.io/github/issues/QuanBlue/Tech-Cheatsheets" alt="open issues" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/issues/">
+    <img src="https://img.shields.io/github/issues/quanblue/tech-cheatsheets" alt="open issues" />
   </a>
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/QuanBlue/Tech-Cheatsheets.svg" alt="license" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/quanblue/tech-cheatsheets.svg" alt="license" />
   </a>
 </p>
 
 <p align="center">
   <b>
-      <a href="https://github.com/QuanBlue/Tech-Cheatsheets">Home page</a> •
-      <a href="https://github.com/QuanBlue/Tech-Cheatsheets/tree/main/Containerization">Containerization page</a>
+      <a href="https://github.com/quanblue/tech-cheatsheets">Home page</a> •
+      <a href="https://github.com/quanblue/tech-cheatsheets/tree/master/Containerization">Containerization page</a>
   </b>
 </p>
 
@@ -61,10 +61,7 @@
    -  [Security Videos](#security-videos)
    -  [Security Roadmap](#security-roadmap)
 -  [Practice Lab](#memo-practice-lab)
--  [Contributors](#busts_in_silhouette-contributors)
 -  [Credits](#sparkles-credits)
--  [License](#scroll-license)
--  [Related Projects](#link-related-projects)
 
 </details>
 
@@ -944,27 +941,11 @@ This is where general Docker best practices and war stories go:
 -  [Building a Development Environment With Docker](https://tersesystems.com/2013/11/20/building-a-development-environment-with-docker/)
 -  [Discourse in a Docker Container](https://samsaffron.com/archive/2013/11/07/discourse-in-a-docker-container)
 
-# :busts_in_silhouette: Contributors
 
-<a href="https://github.com/QuanBlue/Tech-Cheatsheets/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=QuanBlue/Tech-Cheatsheets" />
-</a>
-
-Contributions are always welcome!
 
 # :sparkles: Credits
 
 -  [https://github.com/wsargent/docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)
--  Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-
-# :scroll: License
-
-Distributed under the MIT License. See <a href="https://github.com/QuanBlue/Tech-Cheatsheets/blob/main/LICENSE">`LICENSE`</a> for more information.
-
-# :link: Related Projects
-
--  <u>[**Docker Compose cheatsheet**](https://github.com/QuanBlue/Tech-Cheatsheets/blob/master/Docker%20Compose%20cheatsheet/README.md)</u>: Quick reference for managing multi-container applications.
--  <u>[**Docker Swarm cheatsheet**](https://github.com/QuanBlue/Tech-Cheatsheets/blob/master/Docker%20Swarm%20cheatsheet/README.md)</u>: Quick reference for orchestrating containerized applications at scale.
 
 ---
 

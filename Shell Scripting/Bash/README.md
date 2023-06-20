@@ -8,30 +8,30 @@
 
 <!-- Badges -->
 <p align="center">
-  <a href="https://github.com/QuanBlue/Bash-Scripting-cheatsheet/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/QuanBlue/Bash-Scripting-cheatsheet" alt="contributors" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/quanblue/tech-cheatsheets" alt="contributors" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/QuanBlue/Bash-Scripting-cheatsheet" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/quanblue/tech-cheatsheets" alt="last update" />
   </a>
-  <a href="https://github.com/QuanBlue/Bash-Scripting-cheatsheet/network/members">
-    <img src="https://img.shields.io/github/forks/QuanBlue/Bash-Scripting-cheatsheet" alt="forks" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/network/members">
+    <img src="https://img.shields.io/github/forks/quanblue/tech-cheatsheets" alt="forks" />
   </a>
-  <a href="https://github.com/QuanBlue/Bash-Scripting-cheatsheet/stargazers">
-    <img src="https://img.shields.io/github/stars/QuanBlue/Bash-Scripting-cheatsheet" alt="stars" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/stargazers">
+    <img src="https://img.shields.io/github/stars/quanblue/tech-cheatsheets" alt="stars" />
   </a>
-  <a href="https://github.com/QuanBlue/Bash-Scripting-cheatsheet/issues/">
-    <img src="https://img.shields.io/github/issues/QuanBlue/Bash-Scripting-cheatsheet" alt="open issues" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/issues/">
+    <img src="https://img.shields.io/github/issues/quanblue/tech-cheatsheets" alt="open issues" />
   </a>
-  <a href="https://github.com/QuanBlue/Bash-Scripting-cheatsheet/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/QuanBlue/Bash-Scripting-cheatsheet.svg" alt="license" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/quanblue/tech-cheatsheets.svg" alt="license" />
   </a>
 </p>
 
 <p align="center">
   <b>
-      <a href="https://github.com/QuanBlue/Tech-Cheatsheets">Home page</a> •
-      <a href="https://github.com/QuanBlue/Tech-Cheatsheets/tree/main/Shell%20Scripting">Shell Scripting page</a>
+      <a href="https://github.com/quanblue/tech-cheatsheets">Home page</a> •
+      <a href="https://github.com/quanblue/tech-cheatsheets/tree/master/Shell%20Scripting">Shell Scripting page</a>
   </b>
 </p>
 
@@ -95,11 +95,7 @@
          -  [While Loops](#while-loops)
          -  [For Loops](#for-loops)
          -  [Case Statements](#case-statements)
--  [Roadmap](#world_map-roadmap)
--  [Contributors](#busts_in_silhouette-contributors)
 -  [Credits](#sparkles-credits)
--  [License](#scroll-license)
--  [Related Projects](#link-related-projects)
 </details>
 
 # Bash scripting cheatsheet
@@ -794,33 +790,15 @@ case $weather in
 esac
 ```
 
-# :world_map: Roadmap
 
--  [x] Update theme
--  [x] Emoji
--  [ ] Add more features
-
-# :busts_in_silhouette: Contributors
-
-<a href="https://github.com/QuanBlue/Bash-Scripting-cheatsheet/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=QuanBlue/Bash-Scripting-cheatsheet" />
-</a>
-
-Contributions are always welcome!
 
 # :sparkles: Credits
 
 This software uses the following open source packages:
 
 -  [Github@RehanSaeed/Bash-Cheat-Sheet](https://github.com/RehanSaeed/Bash-Cheat-Sheet)
--  Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
 
-# :scroll: License
-
-Distributed under the MIT License. See <a href="https://github.com/QuanBlue/Tech-Cheatsheets/blob/main/LICENSE">`LICENSE`</a> for more information.
-
-# :link: Related Projects
-
+#
 ---
 
 > Bento [@quanblue](https://bento.me/quanblue) &nbsp;&middot;&nbsp;

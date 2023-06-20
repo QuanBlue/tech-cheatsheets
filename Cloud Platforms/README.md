@@ -8,31 +8,31 @@
 
 <!-- Badges -->
 <p align="center">
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/QuanBlue/Tech-Cheatsheets" alt="contributors" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/quanblue/tech-cheatsheets" alt="contributors" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/QuanBlue/Tech-Cheatsheets" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/quanblue/tech-cheatsheets" alt="last update" />
   </a>
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/network/members">
-    <img src="https://img.shields.io/github/forks/QuanBlue/Tech-Cheatsheets" alt="forks" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/network/members">
+    <img src="https://img.shields.io/github/forks/quanblue/tech-cheatsheets" alt="forks" />
   </a>
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/stargazers">
-    <img src="https://img.shields.io/github/stars/QuanBlue/Tech-Cheatsheets" alt="stars" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/stargazers">
+    <img src="https://img.shields.io/github/stars/quanblue/tech-cheatsheets" alt="stars" />
   </a>
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/issues/">
-    <img src="https://img.shields.io/github/issues/QuanBlue/Tech-Cheatsheets" alt="open issues" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/issues/">
+    <img src="https://img.shields.io/github/issues/quanblue/tech-cheatsheets" alt="open issues" />
   </a>
-  <a href="https://github.com/QuanBlue/Tech-Cheatsheets/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/QuanBlue/Tech-Cheatsheets.svg" alt="license" />
+  <a href="https://github.com/quanblue/tech-cheatsheets/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/quanblue/tech-cheatsheets.svg" alt="license" />
   </a>
 </p>
 
 <p align="center">
   <b>
-      <a href="https://github.com/QuanBlue/Tech-Cheatsheets">Home Page</a> •
-      <a href="https://github.com/QuanBlue/Tech-Cheatsheets/issues/">Report Bug</a> •
-      <a href="https://github.com/QuanBlue/Tech-Cheatsheets/issues/">Request Feature</a>
+      <a href="https://github.com/quanblue/tech-cheatsheets">Home Page</a> •
+      <a href="https://github.com/quanblue/tech-cheatsheets/issues/">Report Bug</a> •
+      <a href="https://github.com/quanblue/tech-cheatsheets/issues/">Request Feature</a>
   </b>
 </p>
 
@@ -58,7 +58,7 @@ Cloud platforms have revolutionized the way software is developed, deployed, and
 
 # :open_book: Contents
 
--  [Amazon Web Service (AWS)](<https://github.com/QuanBlue/Tech-Cheatsheets/tree/main/Cloud%20Platforms/Amazon%20Web%20Services%20(AWS)>) - Scalable cloud platform with extensive service offerings.
+-  [Amazon Web Service (AWS)](<https://github.com/quanblue/tech-cheatsheets/tree/master/Cloud%20Platforms/Amazon%20Web%20Services%20(AWS)>) - Scalable cloud platform with extensive service offerings.
 
 # :rainbow: Usage Instructions
 
