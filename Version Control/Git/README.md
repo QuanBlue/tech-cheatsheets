@@ -56,6 +56,7 @@
 -  [Gitignore Cheatsheet](#books-gitignore-cheatsheet)
 -  [GitFlow](#potted_plant-gitflow)
 -  [Commit convention](#speech_balloon-commit-convention)
+-  [Gain Your GitHub Skills](#mechanical-arm-gain-your-github-skills)
 -  [Credits](#sparkles-credits)
 </details>
 
@@ -307,6 +308,10 @@ Check out [GitFlow](https://github.com/QuanBlue/Tech-Cheatsheets/blob/master/Ver
 # :speech_balloon: Commit convention
 
 Check out [Commit Convention](https://github.com/QuanBlue/Tech-Cheatsheets/blob/master/Version%20Control/Git/Commit%20Convention.md)
+
+# :mechanical_arm: Gain Your GitHub Skills
+
+Learn how to use GitHub with interactive courses designed for beginners and experts at [GitHub Skills](https://github.com/QuanBlue/Tech-Cheatsheets/blob/master/Version%20Control/Git/GitFlow.md)
 
 # :sparkles: Credits
 
