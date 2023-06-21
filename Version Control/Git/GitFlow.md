@@ -105,7 +105,7 @@
 -  **Regularly merge code** in branches to make sure the current code is the latest
 -  **Merge branches' code** before and after code if there is a conflict, then merge conflict before creating the merge request.
 
-## Developer Process
+## Develope Process
 
 ### Prequisites
 
@@ -119,7 +119,7 @@ git checkout -b develop
 git push -u origin develop
 ```
 
-### Process
+### Feature Develop Process
 
 > **Note:** `Issue tab` for creating a new task.
 
@@ -245,3 +245,59 @@ git push origin --delete feature/8-xyz
 ```
 
 **Step 8:** Goto step 1.
+
+### Release Process
+
+Checkout to `release` branch from `develop` branch.
+
+```sh
+# Create and Switch to `release-v1.0.0` branch
+git checkout -b release-v1.0.0 develop
+
+# Push `release-v1.0.0` branch to remote
+git push -u origin release-v1.0.0
+```
+
+> **Note:** Release branch name syntax: `release-v[version]`
+
+Create Release Tag
+
+```sh
+git tag -a v1.0.0 -m "Release v1.0.0"
+```
+
+> **Note:**
+>
+> -  Git Tag syntax: `git tag -a [tag name] -m "[tag message]"`
+> -  Tag name syntax: `v[version]`
+
+Push Tag
+
+```sh
+git push --tag
+```
+
+<div align="center">
+
+![Pushed Tag](assets/GitFlow/Dev-Proc/tag.png)
+<i>Tag - recent push</i>
+
+</div>
+
+<div align="center">
+
+![Pushed Tag 2](assets/GitFlow/Dev-Proc/tag-2.png)
+<i>Tag - detail</i>
+
+</div>
+
+Push `release` branch to `master` branch.
+
+```sh
+# commit
+git add .
+git commit -m "create release v1.0.0"
+
+# push
+git push
+```
