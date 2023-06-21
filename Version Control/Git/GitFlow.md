@@ -42,13 +42,13 @@
 <summary><b>📖 Table of Contents</b></summary>
 
 -  [Introduction](#rainbow-introduction)
--  [Branching Model](#laptop-branching-model)
+-  [Branching Model](#robot-branching-model)
    -  [Master](#master)
    -  [Develop](#develop)
    -  [Feature](#feature)
    -  [Release](#release)
    -  [Hotfix](#hotfix)
--  [Benefits](#flexed_biceps-benefits)
+-  [Benefits](#mechanical_arm-benefits)
 -  [Note](#memo-note)
    -  [Using Merge Request](#using-merge-request)
    -  [Reduce Conflicts Code](#reduce-conflicts-code)
@@ -56,6 +56,7 @@
    -  [Prequisites](#prequisites)
    -  [Feature Develop Process](#feature-develop-process)
    -  [Release Process](#release-process)
+-  [Credits](#sparkles-credits)
 
 </details>
 
@@ -381,3 +382,14 @@ git push origin --delete release-v1.0.0
 ```
 
 **Complete! - All Feature are release in `master` branch with newest version**
+
+# :sparkles: Credits
+
+-  [Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+-  [codeforlife](https://codeforlife.wixsite.com/itblogger/post/t%C3%ACm-hi%E1%BB%83u-v%E1%BB%81-git-flow-trong-ph%C3%A1t-tri%E1%BB%83n-d%E1%BB%B1-%C3%A1n)
+
+
+---
+
+> Bento [@quanblue](https://bento.me/quanblue) &nbsp;&middot;&nbsp;
+> GitHub [@QuanBlue](https://github.com/QuanBlue) &nbsp;&middot;&nbsp; Gmail quannguyenthanh558@gmail.com
