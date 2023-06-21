@@ -1,4 +1,65 @@
-# GitFlow
+<h1 align="center">
+  <img src="./assets/GitFlow/gitflow-logo.png" alt="icon" height="150"></img>
+  <br>
+  <b>GitFlow</b>
+</h1>
+
+<p align="center"> A branching model for software development.</p>
+
+<!-- Badges -->
+<p align="center">
+  <a href="https://github.com/quanblue/tech-cheatsheets/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/quanblue/tech-cheatsheets" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/quanblue/tech-cheatsheets" alt="last update" />
+  </a>
+  <a href="https://github.com/quanblue/tech-cheatsheets/network/members">
+    <img src="https://img.shields.io/github/forks/quanblue/tech-cheatsheets" alt="forks" />
+  </a>
+  <a href="https://github.com/quanblue/tech-cheatsheets/stargazers">
+    <img src="https://img.shields.io/github/stars/quanblue/tech-cheatsheets" alt="stars" />
+  </a>
+  <a href="https://github.com/quanblue/tech-cheatsheets/issues/">
+    <img src="https://img.shields.io/github/issues/quanblue/tech-cheatsheets" alt="open issues" />
+  </a>
+  <a href="https://github.com/quanblue/tech-cheatsheets/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/quanblue/tech-cheatsheets.svg" alt="license" />
+  </a>
+</p>
+
+<p align="center">
+  <b>
+      <a href="https://github.com/quanblue/tech-cheatsheets">Home page</a> •
+      <a href="https://github.com/quanblue/tech-cheatsheets/tree/master/Version%20Control">Version Control page</a> •
+      <a href="https://github.com/QuanBlue/Tech-Cheatsheets/tree/master/Version%20Control/Git">Git page</a>
+  </b>
+</p>
+
+<br/>
+
+<details open>
+<summary><b>📖 Table of Contents</b></summary>
+
+-  [Introduction](#rainbow-introduction)
+-  [Branching Model](#laptop-branching-model)
+   -  [Master](#master)
+   -  [Develop](#develop)
+   -  [Feature](#feature)
+   -  [Release](#release)
+   -  [Hotfix](#hotfix)
+-  [Benefits](#flexed_biceps-benefits)
+-  [Note](#memo-note)
+   -  [Using Merge Request](#using-merge-request)
+   -  [Reduce Conflicts Code](#reduce-conflicts-code)
+-  [Develope Process](#gear-develope-process)
+   -  [Prequisites](#prequisites)
+   -  [Feature Develop Process](#feature-develop-process)
+   -  [Release Process](#release-process)
+
+</details>
+
+# :rainbow: Introduction
 
 `GitFlow` is a branching model and workflow for version control using Git. It provides a structured approach to managing software development projects.
 
@@ -9,9 +70,9 @@
 
 </div>
 
-## Branches
+# :laptop: Branching Model
 
-### Master
+## Master
 
 -  Is the branch that exists throughout the life of the software created by default in Git when we create the repository
 -  Contain the application's initialization code and versions that are ready to release for users to use (put tags on each version).
@@ -24,7 +85,7 @@
 
 </div>
 
-### Develop
+## Develop
 
 -  Is where ongoing development work takes place. It serves as an integration branch for `features` and `bug fixes`.
 -  New features and bug fixes (on branch `feature` and `bugfix`) are merged into develop.
@@ -38,7 +99,7 @@
 
 </div>
 
-### Feature
+## Feature
 
 -  Are branches forked from `develop` to work on new features or significant changes.
 -  They are prefixed with **"feature/"**.
@@ -53,7 +114,7 @@
 
 </div>
 
-### Release
+## Release
 
 -  Is a forked branch from `develop` to prepare a new release
 -  They allow for finalizing the release, performing last-minute bug fixes, and preparing for deployment.
@@ -68,7 +129,7 @@
 
 </div>
 
-### Hotfix
+## Hotfix
 
 -  Are branches forked from `master` to fix critical bugs in production code.
 -  They allow for quick fixes without disturbing ongoing development. Once the hotfix is complete, it's merged into both `develop` and `master`.
@@ -82,7 +143,7 @@
 
 </div>
 
-## Benefits
+# :flexed_biceps: Benefits
 
 -  Clear separation of stable and development code
 -  Structured approach to feature development
@@ -90,28 +151,26 @@
 -  Facilitates bug fixing and release preparation
 -  Provides a version control history that reflects project milestones
 
-## Note
+# :memo: Note
 
-### Using Merge Request
+## Using Merge Request
 
 -  Create a `merge request` so that the **teamlead** or **reviewer** can _review the source code_ before _merging_ to ensure the integrity of the source code, which is extremely important when developing software with a large team.
 -  **The reviewer** will _comment_ directly on the need for changes to the merge request to reduce the exchange time and increase efficiency when working in groups.
 -  Create a `merge request` to save the change history of the source code. When there are problems with errors, software quality.... we can review all the above changes from the code line (the This can be checked by checking each commit but commits are many).
 -  This is also a place to save reviewers' comments, common mistakes so that members don't make old mistakes again and a place to learn code from each other through reviewing code changes line by line. of another member.
 
-### Reduce Conflicts Code
+## Reduce Conflicts Code
 
 -  **Split code** into independent modules and limit writing too much code into one file,
 -  **Regularly merge code** in branches to make sure the current code is the latest
 -  **Merge branches' code** before and after code if there is a conflict, then merge conflict before creating the merge request.
 
-## Develope Process
-
-### Overview Process
+# :gear: Develope Process
 
 [Dev Feature](#feature-develop-process) -> [Release](#release-process)
 
-### Prequisites
+## Prequisites
 
 Create branch `develop` from `master` branch.
 
@@ -123,7 +182,7 @@ git checkout -b develop
 git push -u origin develop
 ```
 
-### Feature Develop Process
+## Feature Develop Process
 
 > **Note:** `Issue tab` for creating a new task.
 
@@ -250,7 +309,7 @@ git push origin --delete feature/8-xyz
 
 **<u>Step 8:</u>** Goto **step 1**.
 
-### Release Process
+## Release Process
 
 **<u>Step 1:</u>** Checkout to `release` branch from `develop` branch.
 

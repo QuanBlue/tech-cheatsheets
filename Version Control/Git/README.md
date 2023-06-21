@@ -54,6 +54,8 @@
       -  [Git show](#git-show)
    -  [Tracking Path Change](#tracking-path-change)
 -  [Gitignore Cheatsheet](#gitignore-cheatsheet)
+-  [GitFlow](#gitflow)
+-  [Commit convention](#commit-convention)
 -  [:sparkles: Credits](#sparkles-credits)
 </details>
 
@@ -297,6 +299,14 @@ pattern?
 # Ignore files with names matching a range of characters
 [a-z]
 ```
+
+# GitFlow
+
+Check out [GitFlow](https://github.com/QuanBlue/Tech-Cheatsheets/blob/master/Version%20Control/Git/GitFlow.md)
+
+# Commit convention
+
+Check out [Commit Convention](https://github.com/QuanBlue/Tech-Cheatsheets/blob/master/Version%20Control/Git/Commit%20Convention.md)
 
 # :sparkles: Credits
 
