@@ -127,7 +127,7 @@ git push -u origin develop
 
 <div align="center">
 
-![Todo task](assets/GitFlow/Dev-Proc/create-issue.png)
+![Create todo task](assets/GitFlow/Dev-Proc/create-issue.png)
 <i>Create new todo task</i>
 
 </div>
@@ -192,23 +192,56 @@ git push origin feature/8-xyz
 
 -  Developer makes sure their unit tests and all regression tests pass on build server.
 
-**Step 6:** Developer submits pull request to `develop`.
+**Step 6:** Developer create pull request to `develop`.
 
--  Pull request unit, integration and regression tests are run on build server.
+<div align="center">
+
+![Create pull req](assets/GitFlow/Dev-Proc/create-pull-req.png)
+<i>Dev - create Pull Request</i>
+
+</div>
+
+<div align="center">
+
+![Updated Issue](assets/GitFlow/Dev-Proc/updated-issue.png)
+<i>Issue updated - after create Pull Request</i>
+
+</div>
 
 **Step 7:** Teamlead merges pull request into `develop` branch.
 
--  Build server deletes remote `feature/5-xyz`.
+<div align="center">
+
+![Merge Pull Request](assets/GitFlow/Dev-Proc/merge-pull-req.png)
+<i>Merge Pull Request</i>
+
+</div>
+
+<div align="center">
+
+![Confirm merge](assets/GitFlow/Dev-Proc/confirm-merge.png)
+<i>Confirm merge</i>
+
+</div>
+
+<div align="center">
+
+![Updated Issue After Merge](assets/GitFlow/Dev-Proc/update-issue-last.png)
+<i>Issue updated - after Merge</i>
+
+</div>
+
+-  Build server deletes remote `feature/8-xyz`.
 
 ```sh
 # Switch to develop branch
 git checkout develop
 
-# Delete local feature/5-xyz
-git branch -d feature/5-xyz
+# Delete local feature/8-xyz
+git branch -d feature/8-xyz
 
-# Delete remote feature/5-xyz
-git push origin --delete feature/5-xyz
+# Delete remote feature/8-xyz
+git push origin --delete feature/8-xyz
 ```
 
 **Step 8:** Goto step 1.
