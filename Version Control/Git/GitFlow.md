@@ -70,7 +70,7 @@
 
 </div>
 
-# :laptop: Branching Model
+# :robot: Branching Model
 
 ## Master
 
@@ -143,7 +143,7 @@
 
 </div>
 
-# :flexed_biceps: Benefits
+# :mechanical_arm: Benefits
 
 -  Clear separation of stable and development code
 -  Structured approach to feature development
