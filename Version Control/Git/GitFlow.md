@@ -109,30 +109,21 @@
 
 ### Prequisites
 
--  Create and Switch to `develop` branch
+Create branch `develop` from `master` branch.
 
-   ```sh
-   git branch develop
-   git checkout develop
-   ```
+```sh
+# Create and Switch to `develop` branch
+git checkout -b develop
 
-   or
-
-   ```sh
-   git checkout -b develop
-   ```
-
--  Push `develop` branch to remote
-
-   ```sh
-   git push -u origin develop
-   ```
+# Push `develop` branch to remote
+git push -u origin develop
+```
 
 ### Process
 
 > **Note:** `Issue tab` for creating a new task.
 
-**Step 1:** Team lead creates a task for developer.
+**Step 1:** **Teamlead** creates a task for developer.
 
 <div align="center">
 
@@ -141,77 +132,83 @@
 
 </div>
 
-**Step 2:** Developer has a task to do.
+**Step 2:** **Developer** has a task to do.
 
 <div align="center">
 
 ![Todo task](assets/GitFlow/Dev-Proc/issue.png)
-<i>Todo task - Issue ID: #5</i>
+<i>Todo task - Issue ID: #8</i>
 
 </div>
 
-**Step 3:** Developer branches `develop`, let's call it `feature/5-xyz`.
+**Step 3:** **Developer** branches `develop`, let's call it `feature/8-xyz`.
+
+```sh
+# Create and Switch to `feature/8-xyz` branch
+git checkout -b feature/8-xyz
+
+# Push `feature/8-xyz` branch to remote
+git push -u origin feature/8-xyz
+```
 
 > **Note:** Feature branch name syntax: `feature/[issueID]-[issueName]`
 
-```sh
-# Create and switch to feature branch
-git checkout -b feature/5-xyz
+**Step 4:** Developer works on feature/x.
 
-# Push feature branch to remote
-git push -u origin feature/5-xyz
-```
-
-**Step 4:** Developer works on `feature/5-xyz`.
-
--  Here is example create a new file `feature-4-xyz.txt` and add content to it.
+-  Here is example create a new file `feature-2-x.txt` and add content to it.
 
 ```sh
-echo "feature-5-xyz" > feature-5-xyz.txt
+echo "feature-8-xyz" > feature-8-xyz.txt
 ```
 
--  Developer writes their own unit tests for `feature/5-xyz`.
+-  Developer writes their own unit tests for `feature/8-xyz`.
 
-**Step 5:** Developer publishes `feature/5-xyz`.
+**Step 5:** Developer publishes `feature/8-xyz`.
 
 -  Developer gets updates from `develop` when needed (by merging `develop` in).
 
 ```sh
-# Commit changes
+# commit
 git add .
-git commit -m "#5 - init feature/5-xyz"
+git commit -m "#8 - init feature/8-xyz"
 
-# Switch to develop branch and get updates
-git checkout develop
+# pull and merge from develop branch
 git pull origin develop
-
-# Switch to feature/5-xyz branch and merge develop branch in it
-git checkout feature/5-xyz
-git merge develop
-
-# Solve conflicts if any then save and commit
-git add .
-git commit -m "#5 - solve conflicts when merge develop branch"
 ```
 
 -  Developer makes sure their unit tests and all regression tests pass locally.
--  Developer pushes `feature/5-xyz` to remote.
+-  Developer pushes `feature/8-xyz`
 
 ```sh
-git push
+# commit
+git add .
+git commit -m "#8 - solve conflict"
+
+# push
+git push origin feature/8-xyz
 ```
 
 > **Note:** commit message syntax: `#[issueID] - [commit message]`
 
 -  Developer makes sure their unit tests and all regression tests pass on build server.
 
-**Step 6:** Developer submits pull request to dev.
+**Step 6:** Developer submits pull request to `develop`.
 
 -  Pull request unit, integration and regression tests are run on build server.
 
-**Step 7:** Admin merges pull request into dev branch which is built and deployed to staging for QA & UAT.
+**Step 7:** Teamlead merges pull request into `develop` branch.
 
--  Build server deletes remote feature/x.
--  Developer deletes local feature/x.
+-  Build server deletes remote `feature/5-xyz`.
+
+```sh
+# Switch to develop branch
+git checkout develop
+
+# Delete local feature/5-xyz
+git branch -d feature/5-xyz
+
+# Delete remote feature/5-xyz
+git push origin --delete feature/5-xyz
+```
 
 **Step 8:** Goto step 1.
