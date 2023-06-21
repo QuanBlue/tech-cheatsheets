@@ -192,13 +192,23 @@ git push origin feature/2-x
 
 -  Developer makes sure their unit tests and all regression tests pass on build server.
 
-**Step 6:** Developer submits pull request to dev.
+**Step 6:** Developer submits pull request to `develop`.
 
 -  Pull request unit, integration and regression tests are run on build server.
 
-**Step 7:** Admin merges pull request into dev branch which is built and deployed to staging for QA & UAT.
+**Step 7:** Admin merges pull request into `develop` branch which is built and deployed to staging for QA & UAT.
 
--  Build server deletes remote feature/x.
--  Developer deletes local feature/x.
+-  Build server deletes remote `feature/5-xyz`.
+
+```sh
+# Switch to develop branch
+git checkout develop
+
+# Delete local feature/5-xyz
+git branch -d feature/5-xyz
+
+# Delete remote feature/5-xyz
+git push origin --delete feature/5-xyz
+```
 
 **Step 8:** Goto step 1.
