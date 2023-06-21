@@ -40,8 +40,8 @@
 <details open>
 <summary><b>📖 Table of Contents</b></summary>
 
--  [:rainbow: Introduction](#rainbow-introduction)
--  [Git CLI Cheatsheet](#git-cli-cheatsheet)
+-  [Introduction](#rainbow-introduction)
+-  [Git CLI Cheatsheet](#books-git-cli-cheatsheet)
    -  [Setup](#setup)
    -  [Git Basic](#git-basic)
    -  [Undo Changes](#undo-changes)
@@ -53,17 +53,17 @@
       -  [Git diff](#git-diff)
       -  [Git show](#git-show)
    -  [Tracking Path Change](#tracking-path-change)
--  [Gitignore Cheatsheet](#gitignore-cheatsheet)
--  [GitFlow](#gitflow)
--  [Commit convention](#commit-convention)
--  [:sparkles: Credits](#sparkles-credits)
+-  [Gitignore Cheatsheet](#books-gitignore-cheatsheet)
+-  [GitFlow](#potted_plant-gitflow)
+-  [Commit convention](#speech_balloon-commit-convention)
+-  [Credits](#sparkles-credits)
 </details>
 
 # :rainbow: Introduction
 
 **Git** is a widely used version control system that helps track changes in code repositories. It provides a collaborative platform for developers to manage code, merge changes, and work efficiently in teams.
 
-# Git CLI Cheatsheet
+# :books: Git CLI Cheatsheet
 
 ## Setup
 
@@ -250,7 +250,7 @@ git mv [existing-path] [new-path]
 git log --stat -M
 ```
 
-# Gitignore Cheatsheet
+# :books: Gitignore Cheatsheet
 
 The `.gitignore` file is a configuration file used by Git to determine which files and directories should be ignored and not tracked by version control. It allows you to specify patterns for files or directories that you don't want to include in your Git repository.
 
@@ -300,11 +300,11 @@ pattern?
 [a-z]
 ```
 
-# GitFlow
+# :potted_plant: GitFlow
 
 Check out [GitFlow](https://github.com/QuanBlue/Tech-Cheatsheets/blob/master/Version%20Control/Git/GitFlow.md)
 
-# Commit convention
+# :speech_balloon: Commit convention
 
 Check out [Commit Convention](https://github.com/QuanBlue/Tech-Cheatsheets/blob/master/Version%20Control/Git/Commit%20Convention.md)
 
