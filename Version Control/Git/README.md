@@ -56,7 +56,7 @@
 -  [Gitignore Cheatsheet](#books-gitignore-cheatsheet)
 -  [GitFlow](#potted_plant-gitflow)
 -  [Commit convention](#speech_balloon-commit-convention)
--  [Gain Your GitHub Skills](#mechanical-arm-gain-your-github-skills)
+-  [Gain Your GitHub Skills](#mechanical_arm-gain-your-github-skills)
 -  [Credits](#sparkles-credits)
 </details>
 
