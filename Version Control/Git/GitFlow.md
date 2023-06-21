@@ -109,30 +109,19 @@
 
 ### Prequisites
 
--  Create and Switch to `develop` branch
+# Create and Switch to `develop` branch
 
-   ```sh
-   git branch develop
-   git checkout develop
-   ```
+git checkout -b develop
 
-   or
+# Push `develop` branch to remote
 
-   ```sh
-   git checkout -b develop
-   ```
+git push -u origin develop
 
--  Push `develop` branch to remote
-
-   ```sh
-   git push -u origin develop
-   ```
-
-### Process
+### ss
 
 > **Note:** `Issue tab` for creating a new task.
 
-**Step 1:** Team lead creates a task for developer.
+**Step 1:** **Teamlead** creates a task for developer.
 
 <div align="center">
 
@@ -141,22 +130,28 @@
 
 </div>
 
-**Step 2:** Developer has a task to do.
+**Step 2:** **Developer** has a task to do.
 
 <div align="center">
 
 ![Todo task](assets/GitFlow/Dev-Proc/issue.png)
-<i>Todo task - Issue ID: #2</i>
+<i>Todo task - Issue ID: #8</i>
 
 </div>
 
-**Step 3:** Developer branches `develop`, let's call it `feature/2-x`.
-
-> **Note:** Feature branch name syntax: `feature/[issueID]-[issueName]`
+**Step 3:** **Developer** branches `develop`, let's call it `feature/8-xyz`.
 
 ```sh
-git checkout -b feature/2-x
+
+
+# Create and Switch to `feature/8-xyz` branch
+git checkout -b feature/8-xyz
+
+# Push `feature/8-xyz` branch to remote
+git push -u origin feature/8-xyz
 ```
+
+> **Note:** Feature branch name syntax: `feature/[issueID]-[issueName]`
 
 **Step 4:** Developer works on feature/x.
 
@@ -182,10 +177,10 @@ git pull origin develop
 ```sh
 # commit
 git add .
-git commit -m "#2 - init feature/2-x"
+git commit -m "#2 - init feature/8-xyz"
 
 # push
-git push origin feature/2-x
+git push origin feature/8-xyz
 ```
 
 > **Note:** commit message syntax: `#[issueID] - [commit message]`
@@ -196,7 +191,7 @@ git push origin feature/2-x
 
 -  Pull request unit, integration and regression tests are run on build server.
 
-**Step 7:** Admin merges pull request into `develop` branch which is built and deployed to staging for QA & UAT.
+**Step 7:** Teamlead merges pull request into `develop` branch.
 
 -  Build server deletes remote `feature/5-xyz`.
 
