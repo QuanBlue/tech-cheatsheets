@@ -182,7 +182,7 @@ git pull origin develop
 ```sh
 # commit
 git add .
-git commit -m "#2 - init feature/8-xyz"
+git commit -m "#8 - solve conflict"
 
 # push
 git push origin feature/8-xyz
