@@ -291,7 +291,7 @@ git push --tag
 
 </div>
 
-Push `release` branch to `master` branch.
+Create Release Pull request to `master` branch.
 
 ```sh
 # commit
@@ -301,3 +301,5 @@ git commit -m "create release v1.0.0"
 # push
 git push
 ```
+
+Merge Pull Request to `master` branch.
