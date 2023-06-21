@@ -107,6 +107,10 @@
 
 ## Develope Process
 
+### Overview Process
+
+[Dev Feature](#feature-develop-process) -> [Release](#release-process)
+
 ### Prequisites
 
 Create branch `develop` from `master` branch.
@@ -123,7 +127,7 @@ git push -u origin develop
 
 > **Note:** `Issue tab` for creating a new task.
 
-**Step 1:** **Teamlead** creates a task for developer.
+**<u>Step 1:</u>** **Teamlead** creates a task for developer.
 
 <div align="center">
 
@@ -132,7 +136,7 @@ git push -u origin develop
 
 </div>
 
-**Step 2:** **Developer** has a task to do.
+**<u>Step 2:</u>** **Developer** has a task to do.
 
 <div align="center">
 
@@ -141,7 +145,7 @@ git push -u origin develop
 
 </div>
 
-**Step 3:** **Developer** branches `develop`, let's call it `feature/8-xyz`.
+**<u>Step 3:</u>** **Developer** branches `develop`, let's call it `feature/8-xyz`.
 
 ```sh
 # Create and Switch to `feature/8-xyz` branch
@@ -153,9 +157,9 @@ git push -u origin feature/8-xyz
 
 > **Note:** Feature branch name syntax: `feature/[issueID]-[issueName]`
 
-**Step 4:** Developer works on feature/x.
+**<u>Step 4:</u>** Developer works on `feature/8-xyz`.
 
--  Here is example create a new file `feature-2-x.txt` and add content to it.
+-  Here is example create a new file `feature-8-xyz.txt` and add content to it.
 
 ```sh
 echo "feature-8-xyz" > feature-8-xyz.txt
@@ -163,7 +167,7 @@ echo "feature-8-xyz" > feature-8-xyz.txt
 
 -  Developer writes their own unit tests for `feature/8-xyz`.
 
-**Step 5:** Developer publishes `feature/8-xyz`.
+**<u>Step 5:</u>** Developer publishes `feature/8-xyz`.
 
 -  Developer gets updates from `develop` when needed (by merging `develop` in).
 
@@ -192,7 +196,7 @@ git push origin feature/8-xyz
 
 -  Developer makes sure their unit tests and all regression tests pass on build server.
 
-**Step 6:** Developer create pull request to `develop`.
+**<u>Step 6:</u>** Developer create pull request to `develop`.
 
 <div align="center">
 
@@ -208,7 +212,7 @@ git push origin feature/8-xyz
 
 </div>
 
-**Step 7:** Teamlead merges pull request into `develop` branch.
+**<u>Step 7:</u>** Teamlead merges pull request into `develop` branch.
 
 <div align="center">
 
@@ -244,11 +248,11 @@ git branch -d feature/8-xyz
 git push origin --delete feature/8-xyz
 ```
 
-**Step 8:** Goto step 1.
+**<u>Step 8:</u>** Goto **step 1**.
 
 ### Release Process
 
-Checkout to `release` branch from `develop` branch.
+**<u>Step 1:</u>** Checkout to `release` branch from `develop` branch.
 
 ```sh
 # Create and Switch to `release-v1.0.0` branch
@@ -260,7 +264,7 @@ git push -u origin release-v1.0.0
 
 > **Note:** Release branch name syntax: `release-v[version]`
 
-Create Release Tag
+**<u>Step 2:</u>** Create Release Tag
 
 ```sh
 git tag -a v1.0.0 -m "Release v1.0.0"
@@ -271,7 +275,7 @@ git tag -a v1.0.0 -m "Release v1.0.0"
 > -  Git Tag syntax: `git tag -a [tag name] -m "[tag message]"`
 > -  Tag name syntax: `v[version]`
 
-Push Tag
+**<u>Step 3:</u>** Push Tag
 
 ```sh
 git push --tag
@@ -291,7 +295,7 @@ git push --tag
 
 </div>
 
-Create Release Pull request to `master` branch.
+**<u>Step 4:</u>** Create Release Pull request to `master` branch.
 
 ```sh
 # commit
@@ -302,4 +306,19 @@ git commit -m "create release v1.0.0"
 git push
 ```
 
-Merge Pull Request to `master` branch.
+**<u>Step 5:</u>** Merge Pull Request to `master` branch.
+
+**<u>Step 6:</u>** Checkout to `master` branch then remove `release` branch.
+
+```sh
+# Switch to master branch
+git checkout master
+
+# Delete local release-v1.0.0 branch
+git branch -d release-v1.0.0
+
+# Delete remote
+git push origin --delete release-v1.0.0
+```
+
+**Complete! - All Feature are release in `master` branch with newest version**
