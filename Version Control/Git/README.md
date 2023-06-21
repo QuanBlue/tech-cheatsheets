@@ -54,11 +54,6 @@
       -  [Git show](#git-show)
    -  [Tracking Path Change](#tracking-path-change)
 -  [Gitignore Cheatsheet](#gitignore-cheatsheet)
--  [GitFlow](#gitflow)
-   -  [Branching model](#branching-model)
-      -  [Main Branches](#main-branches)
-      -  [Supporting Branches](#supporting-branches)
-   -  [Workflow Benefits](#workflow-benefits)
 -  [:sparkles: Credits](#sparkles-credits)
 </details>
 
@@ -302,39 +297,6 @@ pattern?
 # Ignore files with names matching a range of characters
 [a-z]
 ```
-
-# GitFlow
-
-`GitFlow` is a branching model and workflow for version control using Git. It provides a structured approach to managing software development projects.
-
-## Branching model
-
-### Main Branches
-
-**`master`**  
-The `master` branch represents the main branch of your project. It contains stable, production-ready code. Commits on master typically correspond to software releases.
-
-**`develop`**  
-The `develop` branch is where ongoing development work takes place. It serves as an integration branch for features and bug fixes. New features and bug fixes are merged into develop.
-
-### Supporting Branches
-
-**`Feature Branches`**  
-Feature branches are created from `develop` to work on new features or significant changes. They are prefixed with **"feature/"**. Once a feature is complete, the branch is merged back into `develop`.
-
-**`Release Branches`**  
-Release branches are created from `develop` to prepare a new release. They allow for finalizing the release, performing last-minute bug fixes, and preparing for deployment. Once ready, the release branch is merged into both `develop` and `master`, then deleted.
-
-**`Hotfix Branches`**  
-Hotfix branches are derived from `master` and used to fix critical bugs in production code. They allow for quick fixes without disturbing ongoing development. Once the hotfix is complete, it's merged into both `develop` and `master`.
-
-## Workflow Benefits
-
--  Clear separation of stable and development code
--  Structured approach to feature development
--  Enables parallel development and collaboration
--  Facilitates bug fixing and release preparation
--  Provides a version control history that reflects project milestones
 
 # :sparkles: Credits
 
