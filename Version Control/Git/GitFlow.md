@@ -146,46 +146,59 @@
 <div align="center">
 
 ![Todo task](assets/GitFlow/Dev-Proc/issue.png)
-<i>Todo task - Issue ID: #2</i>
+<i>Todo task - Issue ID: #5</i>
 
 </div>
 
-**Step 3:** Developer branches `develop`, let's call it `feature/2-x`.
+**Step 3:** Developer branches `develop`, let's call it `feature/5-xyz`.
 
 > **Note:** Feature branch name syntax: `feature/[issueID]-[issueName]`
 
 ```sh
-git checkout -b feature/2-x
+# Create and switch to feature branch
+git checkout -b feature/5-xyz
+
+# Push feature branch to remote
+git push -u origin feature/5-xyz
 ```
 
-**Step 4:** Developer works on feature/x.
+**Step 4:** Developer works on `feature/5-xyz`.
 
--  Here is example create a new file `feature-2-x.txt` and add content to it.
+-  Here is example create a new file `feature-4-xyz.txt` and add content to it.
 
 ```sh
-echo "feature-2-x" > feature-2-x.txt
+echo "feature-5-xyz" > feature-5-xyz.txt
 ```
 
--  Developer writes their own unit tests for feature/x.
+-  Developer writes their own unit tests for `feature/5-xyz`.
 
-**Step 5:** Developer publishes feature/x.
+**Step 5:** Developer publishes `feature/5-xyz`.
 
 -  Developer gets updates from `develop` when needed (by merging `develop` in).
 
 ```sh
+# Commit changes
+git add .
+git commit -m "#5 - init feature/5-xyz"
+
+# Switch to develop branch and get updates
+git checkout develop
 git pull origin develop
+
+# Switch to feature/5-xyz branch and merge develop branch in it
+git checkout feature/5-xyz
+git merge develop
+
+# Solve conflicts if any then save and commit
+git add .
+git commit -m "#5 - solve conflicts when merge develop branch"
 ```
 
 -  Developer makes sure their unit tests and all regression tests pass locally.
--  Developer pushes feature/x
+-  Developer pushes `feature/5-xyz` to remote.
 
 ```sh
-# commit
-git add .
-git commit -m "#2 - init feature/2-x"
-
-# push
-git push origin feature/2-x
+git push
 ```
 
 > **Note:** commit message syntax: `#[issueID] - [commit message]`
