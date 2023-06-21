@@ -109,15 +109,17 @@
 
 ### Prequisites
 
-# Create and Switch to `develop` branch
+Create branch `develop` from `master` branch.
 
+```sh
+# Create and Switch to `develop` branch
 git checkout -b develop
 
 # Push `develop` branch to remote
-
 git push -u origin develop
+```
 
-### ss
+### Process
 
 > **Note:** `Issue tab` for creating a new task.
 
@@ -142,8 +144,6 @@ git push -u origin develop
 **Step 3:** **Developer** branches `develop`, let's call it `feature/8-xyz`.
 
 ```sh
-
-
 # Create and Switch to `feature/8-xyz` branch
 git checkout -b feature/8-xyz
 
@@ -158,21 +158,26 @@ git push -u origin feature/8-xyz
 -  Here is example create a new file `feature-2-x.txt` and add content to it.
 
 ```sh
-echo "feature-2-x" > feature-2-x.txt
+echo "feature-8-xyz" > feature-8-xyz.txt
 ```
 
--  Developer writes their own unit tests for feature/x.
+-  Developer writes their own unit tests for `feature/8-xyz`.
 
-**Step 5:** Developer publishes feature/x.
+**Step 5:** Developer publishes `feature/8-xyz`.
 
 -  Developer gets updates from `develop` when needed (by merging `develop` in).
 
 ```sh
+# commit
+git add .
+git commit -m "#8 - init feature/8-xyz"
+
+# pull and merge from develop branch
 git pull origin develop
 ```
 
 -  Developer makes sure their unit tests and all regression tests pass locally.
--  Developer pushes feature/x
+-  Developer pushes `feature/8-xyz`
 
 ```sh
 # commit
