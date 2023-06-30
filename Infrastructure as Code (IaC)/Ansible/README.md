@@ -4,7 +4,7 @@
   <b>Ansible Cheatsheet</b>
 </h1>
 
-<p align="center">Quick reference guide for understanding and using the syntax and concepts in GitHub Actions for workflow automation.</p>
+<p align="center">Automation tool for configuration management, orchestration, and application deployment across infrastructure.</p>
 
 <!-- Badges -->
 <p align="center">
@@ -40,260 +40,267 @@
 <details open>
 <summary><b>📖 Table of Contents</b></summary>
 
--  [Introduction](#rainbow-introduction)
--  [Usage](#toolbox-usage)
--  [Github Actions Cheatsheet](#page_facing_up-github-actions-cheatsheet)
-   -  [Workflow File Basics](#workflow-file-basics)
-   -  [Workflow Syntax](#workflow-syntax)
-      -  [Name](#name)
-      -  [Default](#default)
-      -  [On](#on)
-         -  [Manual](#manual)
-         -  [Automated](#automated)
-      -  [Job](#job)
-         -  [Runs-on](#runs-on)
-         -  [Steps](#steps)
-   -  [Workflow Context](#workflow-context)
-   -  [Secrets](#secrets)
-      -  [Setup Secrets](#setup-secrets)
-      -  [Use Secrets](#use-secrets)
-   -  [Conditional Execution](#conditional-execution)
-   -  [Artifacts](#artifacts)
-   -  [Matrix Strategy](#matrix-strategy)
-   -  [Parallel Execution](#parallel-execution)
--  [Github Marketplace Actions](#classical_building-github-marketplace-actions)
--  [Example](#bookmark_tabs-example)
--  [Useful links](#chains-useful-links)
--  [Credits](#sparkles-credits)
+-  [:rainbow: Introduction](#rainbow-introduction)
+-  [CLI Cheatsheet](#cli-cheatsheet)
+-  [Key concepts](#key-concepts)
+   -  [Inventory](#inventory)
+   -  [Playbooks](#playbooks)
+   -  [Tasks](#tasks)
+   -  [Modules](#modules)
+   -  [Roles](#roles)
+   -  [Variables](#variables)
+   -  [Handlers](#handlers)
+   -  [Facts](#facts)
+   -  [Templates](#templates)
+   -  [Vault](#vault)
+-  [:chains: Useful links](#chains-useful-links)
+-  [:sparkles: Credits](#sparkles-credits)
 </details>
 
 # :rainbow: Introduction
 
-**GitHub Actions** is a powerful workflow automation tool provided by GitHub. It allows you to define custom workflows using `YAML` syntax, enabling you to _automate tasks, build, test, and deploy_ your projects directly from your repositories.
+**Ansible** is an open-source automation tool used for configuration management, application deployment, and orchestration. It simplifies complex IT tasks by allowing you to automate the provisioning, configuration, and management of systems in a streamlined and efficient manner. With Ansible, you can define your infrastructure as code, automate repetitive tasks, and achieve consistent, scalable, and auditable infrastructure management.
 
-# :toolbox: Usage
+# CLI Cheatsheet
 
-Create **Workflow file** at `.github/workflows/<workflow_name>.yml`
+Running Ansible tasks.
 
-> **Note:**
->
-> -  **Workflow file** must be:
->    -  In the `.github/workflows` directory
->    -  Have a `.yml` or `.yaml` file extension
-> -  We can create **multiple workflow**
-
-You can also check out **Workflow files** in `.github/workflows`.
-
-# :page_facing_up: Github Actions Cheatsheet
-
-## Workflow File Basics
-
-```yml
-name: [Workflow Name]
-on:
-   event: [trigger]
-
-defaults:
-   run:
-      shell: [shell]
-      working-directory: [directory]
-
-jobs:
-   [job_name]:
-      runs-on: [os]
-      steps:
-         - name: [Step Name]
-           uses: [action]
-           with:
-              key: [value]
-         - name: [Another Step]
-           run: |
-              command 1
-              command 2
+```bash
+ansible <host-pattern> -m <module-name>
+ansible -i <inventory-file> -m <module-name>
 ```
 
-## Workflow Syntax
+Run Playbooks
 
--  `name`: Specifies the name of the workflow.
--  `default`: Specifies the default value for an input or environment variable for steps in the workflow.
--  `on`: Defines the event that triggers the workflow.
--  `jobs`: Contains one or more jobs to be executed.
--  `runs-on`: Specifies the operating system for the job.
--  `steps`: Lists the individual steps in the job.
-
-### Name
-
-```yml
-name: [workflow_name]
+```bash
+ansible-playbook <playbook-file>
 ```
 
-### Default
+Manages Ansible roles.
 
-`default` is used to specify a default value for an input or environment variable if no value is provided. It allows you to define a fallback value that will be used when the variable is not explicitly set.
-
-```yml
-defaults:
-   run:
-      shell: [shell]
-      working-directory: [directory]
+```bash
+ansible-galaxy install <role-name>
+ansible-galaxy init <role-name>
 ```
 
-For example, if you want to use `bash` as the default shell and work directory `./client/` as the default work directory for all steps in the workflow, you can define it as follows:
+Encrypts and decrypts sensitive data in Ansible files.
 
-```yml
-defaults:
-   run:
-      shell: bash
-      working-directory: ./client/
+```bash
+ansible-vault create <file-name>
+ansible-vault edit <file-name>
+ansible-vault decrypt <file-name>
 ```
 
-### On
+Displays Ansible configuration settings.
 
-> **Note:** [Event trigger workflow](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
-
-4 common event trigger workflow `push`, `pull_request`, `schedule`, `workflow_dispatch`
-
--  `push`: Triggered when code is pushed to the repository.
--  `pull_request`: Triggered when a pull request is created or updated.
--  `schedule`: Triggered at specified cron schedule.
--  `workflow_dispatch`: Triggered manually through the GitHub UI.
-
-#### Manual
-
-```yml
-on: workflow_dispatch
+```bash
+ansible-config list
+ansible-config view
 ```
 
-#### Automated
+Displays documentation for Ansible modules.
 
-```yml
-on:
-   # On push action
-   push:
-      branches: [<branch1>, <branch2>, ...]
-      paths:
-         # Exclude
-         - "!<filename>" #exclude file
-         - "!<folder>/**-<tail>" # exclude files in the `<folder>` folder that end in `-<tail>`
-         # Include (ony run workflow when file changed)
-         - "<filename>" #include file
-         - "<folder>/**" # include folder
-   # On pull request action
-   pull_request:
-      branches: [<branch1>, <branch2>, ...]
+```bash
+ansible-doc <module-name>
 ```
 
-### Job
+Displays Ansible inventory information.
 
-```yml
-jobs:
-   [job_name]:
-      runs-on: [os]
-      steps:
-         - name: [step_1_name]
-           uses: [action]
-           with:
-              key: [value]
-         - name: [step_2_name]
-           run: |
-              command 1
-              command 2
+```bash
+ansible-inventory -i <inventory-file> --list
 ```
 
-#### Runs-on
+Opens an interactive Ansible console.
 
-```yml
-runs-on: [operate_system] # ubuntu-latest, windows-latest, macos-latest
+```bash
+ansible-console
 ```
 
-#### Steps
+Pulls and applies configurations from Ansible on remote hosts.
 
--  `name`: Describes the step.
--  `uses`: Executes an action from the GitHub Marketplace or a specific repository.
--  `run`: Executes shell commands directly in the step.
--  `with`: Provides input parameters for an action.
--  `env`: Sets environment variables for the step.
+```bash
+ansible-pull -U <repository-url> <playbook-file>
+```
 
-## Workflow Context
+# Key concepts
 
--  `github`: Provides access to GitHub context information like repository, event payload, etc.
--  `env`: Gives access to environment variables.
+## Inventory
 
-## Secrets
+**Inventory:** An inventory is a file or set of files that _define the hosts and groups of hosts on which Ansible will operate_. It specifies the target machines where Ansible will run tasks.
 
--  `secrets`: Stores sensitive information like API keys or passwords.
--  We only see it's value when we set it up.
+The default location for this file is `/etc/ansible/hosts`. You can specify a different inventory file at the command line using the `-i <path>` option or in configuration using inventory.
 
-### Setup Secrets
+-  **Hosts and Groups:**
 
--  Follow this step for setup secrets:  
-   `Setting > Secrets and Variables > Actions > New repository secret`
+   -  `[group_name]`: Defines a group of hosts.
+   -  `<host1_name> ansible_host=<host1_ip>`: Defines a host name (alias) and its IP address.
+   -  `<host1_ip> ansible_user=<username>`: Defines the remote username for a host.
+   -  `<group_name>: <child_group1>, <child_group2>`: Defines group hierarchy.
 
-<div align="center">
+-  **Patterns for Host Selection:**
 
-![set up secrets](./assets/setup%20secrets.png)
+   -  `all`: Selects all hosts.
+   -  `host1_ip`: Selects a specific host.
+   -  `group_name: Selects all hosts in a group.
+   -  `group1:&group2`: Selects hosts common to both groups.
+   -  `group_name[0]`: Selects the first host in a group.
 
-  <div>
-    <i>Figure 1. Set up secrets</i>
-  </div>
-</div>
+-  **Variables:**
+   -  `ansible_host`: Defines the host's IP address.
+   -  `ansible_user`: Defines the remote username for a host.
+   -  `ansible_password`: Defines the remote password for a host.
+   -  `ansible_port`: Defines the SSH port for a host.
+   -  `ansible_connection`: Defines the connection type (e.g., ssh, local, etc.).
+   -  `ansible_ssh_private_key_file`: Defines the SSH private key file path.
+   -  `ansible_become_user`: Defines the user to become (sudo/su) on the remote host.
 
--  Add new secret key:
-   -  `Name`: Name of secret key
-   -  `Secret`: Value of secret key
+Inventory files are written in `INI` or `YAML` format.
 
-### Use Secrets
+```ini
+; inventory.ini
 
-Usage: `${{ secrets.<secret_name> }}`
+[<group_name>]
+<host1_ip>
+<host2_ip> ansible_user=<username>
+<host3_name> ansible_host=<host3_ip> ansible_user=<username> ansible_password=<password>
 
-## Conditional Execution
+[<child_group>]
+<host4_name> ansible_host=<host4_ip>
 
--  `if`: Allows conditional execution based on expressions.
--  `env`: Enables checking environment variables.
+[<group_name>:children]
+<child_group>
+```
 
-## Artifacts
+```yaml
+# inventory.yaml
 
--  `upload-artifact`: Saves files from a job to be used in subsequent jobs.
--  `download-artifact`: Retrieves files uploaded as artifacts.
+all:
+   hosts:
+      <host1_ip>:
+      <host2_ip>:
+         ansible_user: <username>
+      <host3_name>:
+         ansible_host: <host3_ip>
+         ansible_user: <username>
+         ansible_password: <password>
 
-## Matrix Strategy
+   children:
+      <child_group>:
+         hosts:
+            <child_host>:
+               <host4_name>:
+                  ansible_host: <host4_ip>
 
--  `strategy`: Enables defining a matrix of configurations for a job.
--  `matrix`: Specifies the different values for the matrix.
+<group_name>:
+   children:
+      - <child_group>
+```
 
-## Parallel Execution
+<details>
+   <summary>Example</summary>
 
--  `jobs.<job_id>.needs`: Defines job dependencies for parallel execution.
--  `jobs.<job_id>.strategy.matrix.<key>`: Accesses matrix values in a job.
--  This cheatsheet provides a quick overview of the syntax and concepts in GitHub Actions. Refer to the official GitHub Actions documentation for more details and advanced features.
+In `ini`
 
-Happy automating with GitHub Actions!
+```ini
+; inventory.ini
 
-# :classical_building: Github Marketplace Actions
+[web_client]
+192.168.1.10
+192.168.1.11 ansible_user=admin
 
--  Go to the GitHub Marketplace website: https://github.com/marketplace.
--  Find the action you want to use.
--  Follow the instructions of the action to include the action in your workflow.
+[web_sever]
+express_js ansible_host=192.168.1.12 ansible_user=admin ansible_password=admin
 
-# :bookmark_tabs: Example
+[database]
+mongodb ansible_host=192.168.1.13
 
-Please check out **Workflow files** in `.github/workflows`.
+[web_application:children]
+web_client
+web_sever
+database
+```
 
-Explain in detail: [Example.md](./Example.md)
+In `yaml`
+
+```yaml
+# inventory.yaml
+
+web_application:
+   children:
+      web_client:
+         hosts:
+            192.168.1.10:
+            192.168.1.11:
+               ansible_user: admin
+      web_server:
+         hosts:
+            express_js:
+               ansible_host: 192.168.1.12
+               ansible_user: admin
+               ansible_password: admin
+      database:
+         hosts:
+            mongodb:
+               ansible_host: 192.168.1.13
+```
+
+</details>
+
+> Ref: https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html
+
+## Playbooks
+
+**Playbooks:** Playbooks are files written in YAML format that define a set of tasks and configurations to be executed by Ansible. Playbooks describe the desired state of the system and orchestrate the execution of tasks across hosts.
+
+## Tasks
+
+**Tasks:** Tasks are the building blocks of playbooks. Each task represents a unit of work to be performed, such as executing a command, managing a file, or restarting a service. Tasks are executed sequentially on hosts defined in the playbook.
+
+## Modules
+
+**Modules:** Modules are units of code that Ansible uses to perform specific tasks on managed hosts. They can manage system configurations, interact with APIs, install packages, and more. Ansible ships with a wide range of modules, and you can also create custom modules.
+
+## Roles
+
+**Roles:** Roles provide a way to organize and package related tasks, variables, and files into reusable units. They allow you to structure your playbooks in a modular and scalable manner, promoting code reuse and maintainability.
+
+## Variables
+
+**Variables:** Variables are used to store data that can be referenced and reused throughout playbooks and roles. They can be defined at various levels, including host level, group level, and globally. Variables can be static or dynamically generated.
+
+## Handlers
+
+**Handlers:** Handlers are tasks that are only executed when triggered by a notification. They are typically used to manage services or perform specific actions after a change has been made, such as restarting a service when a configuration file is modified.
+
+## Facts
+
+**Facts:** Facts are pieces of information about managed hosts gathered by Ansible. They include system details like IP addresses, operating system, hardware information, and more. Facts are automatically collected and can be used as variables in playbooks.
+
+## Templates
+
+**Templates:** Templates are files written in a templating language (usually Jinja2) that allow you to generate dynamic content. They are useful for generating configuration files customized for each host or incorporating variable values into files.
+
+## Vault
+
+**Vault:** Vault is a feature in Ansible that allows you to encrypt sensitive data, such as passwords or API keys, within playbooks or variable files. It ensures that sensitive information is stored securely and can only be decrypted during playbook execution.
 
 # :chains: Useful links
 
--  [Filter pattern](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet)
--  [Event trigger workflow](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+-  [Inventory guide](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html)
+-  Ansible-Semaphore
 
 # :sparkles: Credits
 
 This software uses the following open source packages:
 
--  [Workflow-syntax-for-github-actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
+-  [Ansible](https://www.ansible.com/)
 -  Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
 
 ---
 
 > Bento [@quanblue](https://bento.me/quanblue) &nbsp;&middot;&nbsp;
 > GitHub [@QuanBlue](https://github.com/QuanBlue) &nbsp;&middot;&nbsp; Gmail quannguyenthanh558@gmail.com
+
+```
+
+```
