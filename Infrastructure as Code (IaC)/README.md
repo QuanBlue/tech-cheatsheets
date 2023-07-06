@@ -41,9 +41,9 @@
 <details open>
 <summary><b>Table of Contents</b></summary>
 
--  [Introduction](#star-introduction)
--  [Contents](#open_book-contents)
--  [Usage Instructions](#rainbow-usage-instructions)
+-  [:star: Introduction](#star-introduction)
+-  [:open_book: Contents](#open_book-contents)
+-  [:rainbow: Usage Instructions](#rainbow-usage-instructions)
 
 # :star: Introduction
 
