@@ -41,9 +41,9 @@
 <details open>
 <summary><b>Table of Contents</b></summary>
 
--  [:star: Introduction](#star-introduction)
--  [:open_book: Contents](#open_book-contents)
--  [:rainbow: Usage Instructions](#rainbow-usage-instructions)
+-  [Introduction](#star-introduction)
+-  [Contents](#open_book-contents)
+-  [Usage Instructions](#rainbow-usage-instructions)
 
 # :star: Introduction
 
@@ -51,8 +51,8 @@ Infrastructure as Code (IaC) is a practice that enables the provisioning, config
 
 # :open_book: Contents
 
--  [Vagrant](<https://github.com/quanblue/tech-cheatsheets/tree/master/Infrastructure520as%20Code%20(IaC)/Vagrant>) - Provision and manage portable development environments effortlessly.
--  [Ansible](<https://github.com/quanblue/tech-cheatsheets/tree/master/Infrastructure520as%20Code%20(IaC)/Ansible>) - Open-source automation tool for configuration management and orchestration.
+-  [Vagrant](https://github.com/quanblue/tech-cheatsheets/tree/master/Infrastructure520as%20Code%20(IaC)/Vagrant) - Provision and manage portable development environments effortlessly.
+-  [Ansible](https://github.com/QuanBlue/tech-cheatsheets/tree/master/Infrastructure%20as%20Code%20(IaC)/Ansible) - Open-source automation tool for configuration management and orchestration.
 
 # :rainbow: Usage Instructions
 
