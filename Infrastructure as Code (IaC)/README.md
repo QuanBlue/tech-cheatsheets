@@ -51,7 +51,7 @@ Infrastructure as Code (IaC) is a practice that enables the provisioning, config
 
 # :open_book: Contents
 
--  [Vagrant](https://github.com/quanblue/tech-cheatsheets/tree/master/Infrastructure520as%20Code%20(IaC)/Vagrant) - Provision and manage portable development environments effortlessly.
+-  [Vagrant](https://github.com/quanblue/tech-cheatsheets/tree/master/Infrastructure%20as%20Code%20(IaC)/Vagrant) - Provision and manage portable development environments effortlessly.
 -  [Ansible](https://github.com/QuanBlue/tech-cheatsheets/tree/master/Infrastructure%20as%20Code%20(IaC)/Ansible) - Open-source automation tool for configuration management and orchestration.
 
 # :rainbow: Usage Instructions
