@@ -1,10 +1,10 @@
 <h1 align="center">
-  <img src="./assets/ansible-logo.png" alt="icon" height="150"></img>
+  <img src="./assets/Prometheus-logo.png" alt="icon" height="150"></img>
   <br>
-  <b>Ansible Cheatsheet</b>
+  <b>Prometheus Cheatsheet</b>
 </h1>
 
-<p align="center">Ansible is an open-source automation tool that simplifies configuration management, application deployment, and orchestration in IT infrastructure.</p>
+<p align="center">Prometheus is an open-source monitoring system that collects and stores metrics from various targets for analysis and alerting.</p>
 
 <!-- Badges -->
 <p align="center">
@@ -31,7 +31,7 @@
 <p align="center">
   <b>
       <a href="https://github.com/quanblue/tech-cheatsheets">Home page</a> •
-      <a href="https://github.com/quanblue/tech-cheatsheets/tree/master/Infrastructure%20as%20Code%20(IaC)">IaC page</a>
+      <a href="https://github.com/quanblue/tech-cheatsheets/tree/master/Monitoring%20and%20Logging">Monitoring and Logging page</a>
   </b>
 </p>
 

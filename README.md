@@ -41,10 +41,10 @@
 <details open>
 <summary><b>Table of Contents</b></summary>
 
--  [Introduction](#star-introduction)
--  [Categories](#toolbox-categories)
--  [Contributors](#busts_in_silhouette-contributors)
--  [License](#scroll-license)
+- [:star: Introduction](#star-introduction)
+- [:toolbox: Categories](#toolbox-categories)
+- [:busts\_in\_silhouette: Contributors](#busts_in_silhouette-contributors)
+- [:scroll: License](#scroll-license)
 </details>
 
 # :star: Introduction
@@ -58,6 +58,7 @@ Welcome to the Technology Cheat Sheets repository! This repository aims to provi
 -  [Container Orchestration](https://github.com/quanblue/tech-cheatsheets/tree/master/Container%20Orchestration)
 -  [Containerization](https://github.com/quanblue/tech-cheatsheets/tree/master/Containerization)
 -  [Infrastructure as Code (IaC)](<https://github.com/quanblue/tech-cheatsheets/tree/master/Infrastructure%20as%20Code%20(IaC)>)
+-  [Monitoring and Logging](https://github.com/quanblue/tech-cheatsheets/tree/master/Monitoring%20and%20Logging)
 -  [Shell Scripting](https://github.com/quanblue/tech-cheatsheets/tree/master/Shell%20Scripting)
 -  [Version Control](https://github.com/quanblue/tech-cheatsheets/tree/master/Version%20Control)
 
@@ -79,3 +80,5 @@ Distributed under the MIT License. See <a href="https://github.com/quanblue/tech
 
 > Bento [@quanblue](https://bento.me/quanblue) &nbsp;&middot;&nbsp;
 > GitHub [@QuanBlue](https://github.com/QuanBlue) &nbsp;&middot;&nbsp; Gmail quannguyenthanh558@gmail.com
+
+<!-- TODO: Ansible, Grafana, Prometheus -->
