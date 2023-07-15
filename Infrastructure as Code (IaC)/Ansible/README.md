@@ -4,11 +4,7 @@
   <b>Ansible Cheatsheet</b>
 </h1>
 
-<<<<<<< HEAD
-<p align="center">Ansible is an open-source automation tool that simplifies configuration management, application deployment, and orchestration in IT infrastructure.</p>
-=======
 <p align="center">Automation tool for configuration management, orchestration, and application deployment across infrastructure.</p>
->>>>>>> ecc31e7fca80b2e387e0f3361c38a80be6a57b97
 
 <!-- Badges -->
 <p align="center">
@@ -44,47 +40,33 @@
 <details open>
 <summary><b>📖 Table of Contents</b></summary>
 
-<<<<<<< HEAD
 - [:rainbow: Introduction](#rainbow-introduction)
-- [:page\_facing\_up: Cheatsheet](#page_facing_up-cheatsheet)
+- [:clipboard: CLI Cheatsheet](#clipboard-cli-cheatsheet)
+- [:key: Key concepts](#key-key-concepts)
+- [:rocket: Getting Started](#rocket-getting-started)
+  - [Inventory](#inventory)
+    - [Inventory File Format - Cheatsheet](#inventory-file-format---cheatsheet)
+      - [Hosts and Groups](#hosts-and-groups)
+      - [Inventory syntax](#inventory-syntax)
+  - [Playbook, Tasks, Modules and Templates](#playbook-tasks-modules-and-templates)
+    - [Playbook syntax](#playbook-syntax)
+    - [Template](#template)
+      - [Template module](#template-module)
+      - [Template file syntax](#template-file-syntax)
+  - [Debugging and Variables](#debugging-and-variables)
+    - [Variables](#variables)
+    - [Debugging syntax](#debugging-syntax)
+  - [Roles](#roles)
+    - [Role Definition](#role-definition)
+    - [Auto init role](#auto-init-role)
+    - [Using Roles](#using-roles)
 - [:chains: Useful links](#chains-useful-links)
+- [:link: Relate Project](#link-relate-project)
 - [:sparkles: Credits](#sparkles-credits)
-=======
--  [Introduction](#rainbow-introduction)
--  [CLI Cheatsheet](#clipboard-cli-cheatsheet)
--  [Key concepts](#key-key-concepts)
--  [Getting Started](#rocket-getting-started)
-   -  [Inventory](#inventory)
-      -  [Inventory File Format - Cheatsheet](#inventory-file-format---cheatsheet)
-         -  [Hosts and Groups](#hosts-and-groups)
-         -  [Inventory syntax](#inventory-syntax)
-   -  [Playbook, Tasks, Modules and Templates](#playbook-tasks-modules-and-templates)
-      -  [Playbook syntax](#playbook-syntax)
-      -  [Template](#template)
-         -  [Template module](#template-module)
-         -  [Template file syntax](#template-file-syntax)
-   -  [Debugging and Variables](#debugging-and-variables)
-      -  [Variables](#variables)
-      -  [Debugging syntax](#debugging-syntax)
-   -  [Roles](#roles)
-      -  [Role Definition](#role-definition)
-      -  [Using Roles](#using-roles)
--  [Useful links](#chains-useful-links)
--  [Relate Project](#link-relate-project)
--  [Credits](#sparkles-credits)
->>>>>>> ecc31e7fca80b2e387e0f3361c38a80be6a57b97
 </details>
 
 # :rainbow: Introduction
 
-<<<<<<< HEAD
-
-# :page_facing_up: Cheatsheet
-
-
-# :chains: Useful links
-
-=======
 **Ansible** is an open-source automation tool used for configuration management, application deployment, and orchestration. It simplifies complex IT tasks by allowing you to automate the provisioning, configuration, and management of systems in a streamlined and efficient manner. With Ansible, you can define your infrastructure as code, automate repetitive tasks, and achieve consistent, scalable, and auditable infrastructure management.
 
 # :clipboard: CLI Cheatsheet
@@ -664,6 +646,18 @@ By default **Ansible** will look in each directory within a role for a `main.yml
 -  `templates/main.yml` - templates that the role deploys.
 -  `meta/main.yml` - metadata for the role, including role dependencies and optional Galaxy metadata such as platforms supported.
 
+### Auto init role
+
+```bash
+ansible-galaxy init <role-name>
+```
+
+> **Note:** The default path to create new role is the current working directory.
+>
+> To change the path, use `--init-path <INIT_PATH>` option.
+
+> Ref: [ansible-galaxy](https://docs.ansible.com/ansible/latest/cli/ansible-galaxy.html)
+
 ### Using Roles
 
 We have `playbook` and `roles` directory structure as below:
@@ -721,16 +715,12 @@ It will execute `tasks/main.yml` and `vars/main.yml` in `common` role.
 # :link: Relate Project
 
 -  [**ansible-automation**](https://github.com/QuanBlue/ansible-automation) - Helping you auto create Ansible VPS and Ubuntu VPSs. Auto generate Inventory
->>>>>>> ecc31e7fca80b2e387e0f3361c38a80be6a57b97
 
 # :sparkles: Credits
 
 This software uses the following open source packages:
 
-<<<<<<< HEAD
-=======
 -  [Ansible](https://www.ansible.com/)
->>>>>>> ecc31e7fca80b2e387e0f3361c38a80be6a57b97
 -  Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
 
 ---
