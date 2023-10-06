@@ -1,10 +1,10 @@
 <h1 align="center">
-  <img src="./assets/monitoring-logging-logo.jpg" alt="icon" height="150"></img>
+  <img src="./assets/programming-lang.png" alt="icon" height="150"></img>
   <br>
-  <br>Monitoring and Logging</br> Management</b>
+  <b>Programming Language</b>
 </h1>
 
-<p align="center"> This category contains cheat sheets related to Infrastructure as Code.</p>
+<p align="center"> This category includes cheat sheets that cover various programming language, providing quick references and practical examples to help you write efficient and effective shell scripts.</p>
 
 <!-- Badges -->
 <p align="center">
@@ -43,24 +43,22 @@
 
 - [Introduction](#star-introduction)
 - [Contents](#open_book-contents)
+- [Usage Instructions](#rainbow-usage-instructions)
 
 # :star: Introduction
 
-
-**Monitoring and logging** are essential components in software development and system administration. They help track and analyze various aspects of an application or system, providing valuable insights for troubleshooting, performance optimization, and overall system health.
-
-- **Monitoring** involves actively *observing the system's behavior*, *collecting data on key metrics* such as CPU usage, memory utilization, network traffic, and response times. 
-   > This real-time monitoring allows you to detect anomalies, identify performance bottlenecks, and respond promptly to issues.
-
-- **Logging** involves *capturing and storing important events, errors, and activities* that occur within an application or system. Logs serve as a historical record of events and can be invaluable for debugging, auditing, and compliance purposes.
-  > They often include information such as timestamps, severity levels, error messages, and relevant contextual data.
+A programming language is a formal system designed to enable humans to communicate instructions to a computer. These instructions, written in the form of code, are used to create software applications, perform calculations, automate tasks, and control various aspects of computer hardware. Programming languages serve as a bridge between human thought and computer execution.
 
 # :open_book: Contents
 
--  [Grafana](https://github.com/quanblue/tech-cheatsheets/tree/master/Monitoring%20and%20Logging/Grafana) - Data visualization and monitoring platform used to create interactive dashboards.
--  [Prometheus](https://github.com/quanblue/tech-cheatsheets/tree/master/Monitoring%20and%20Logging/Prometheus) - Monitoring and alerting toolkit for collecting and analyzing metrics from diverse systems.
+- [Golang](https://github.com/quanblue/tech-cheatsheets/tree/master/Programming%20Language/Golang) - Efficient, statically typed language for concurrent systems and networking.
 
+# :rainbow: Usage Instructions
 
+- Review the cheat sheets to understand the fundamentals of programming language and common scripting techniques.
+- Use the provided examples as templates to create your own project for specific tasks or workflows.
+- Refer to the cheat sheets for syntax, command usage, and best practices to write efficient applications.
+- Learn how to use variables, control flow statements, and file operations to automate repetitive tasks and manage system resources.
 
 ---
 

@@ -41,10 +41,10 @@
 <details open>
 <summary><b>Table of Contents</b></summary>
 
-- [:star: Introduction](#star-introduction)
-- [:toolbox: Categories](#toolbox-categories)
-- [:busts\_in\_silhouette: Contributors](#busts_in_silhouette-contributors)
-- [:scroll: License](#scroll-license)
+- [Introduction](#star-introduction)
+- [Categories](#toolbox-categories)
+- [Contributors](#busts_in_silhouette-contributors)
+- [License](#scroll-license)
 </details>
 
 # :star: Introduction
@@ -53,14 +53,15 @@ Welcome to the Technology Cheat Sheets repository! This repository aims to provi
 
 # :toolbox: Categories
 
--  [CI/CD](https://github.com/quanblue/tech-cheatsheets/tree/master/CI.CD)
--  [Cloud Platforms](https://github.com/quanblue/tech-cheatsheets/tree/master/Cloud%20Platforms)
--  [Container Orchestration](https://github.com/quanblue/tech-cheatsheets/tree/master/Container%20Orchestration)
--  [Containerization](https://github.com/quanblue/tech-cheatsheets/tree/master/Containerization)
--  [Infrastructure as Code (IaC)](<https://github.com/quanblue/tech-cheatsheets/tree/master/Infrastructure%20as%20Code%20(IaC)>)
--  [Monitoring and Logging](https://github.com/quanblue/tech-cheatsheets/tree/master/Monitoring%20and%20Logging)
--  [Shell Scripting](https://github.com/quanblue/tech-cheatsheets/tree/master/Shell%20Scripting)
--  [Version Control](https://github.com/quanblue/tech-cheatsheets/tree/master/Version%20Control)
+- [CI/CD](https://github.com/quanblue/tech-cheatsheets/tree/master/CI.CD)
+- [Cloud Platforms](https://github.com/quanblue/tech-cheatsheets/tree/master/Cloud%20Platforms)
+- [Container Orchestration](https://github.com/quanblue/tech-cheatsheets/tree/master/Container%20Orchestration)
+- [Containerization](https://github.com/quanblue/tech-cheatsheets/tree/master/Containerization)
+- [Infrastructure as Code (IaC)](<https://github.com/quanblue/tech-cheatsheets/tree/master/Infrastructure%20as%20Code%20(IaC)>)
+- [Monitoring and Logging](https://github.com/quanblue/tech-cheatsheets/tree/master/Monitoring%20and%20Logging)
+- [Shell Scripting](https://github.com/quanblue/tech-cheatsheets/tree/master/Shell%20Scripting)
+- [Version Control](https://github.com/quanblue/tech-cheatsheets/tree/master/Version%20Control)
+- [Programming Language](https://github.com/quanblue/tech-cheatsheets/tree/master/Programming%Language)
 
 Each category folder contains cheat sheets related to that specific topic. Feel free to explore the folders and access the cheat sheets you need.
 
