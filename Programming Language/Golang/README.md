@@ -48,8 +48,8 @@
     - [Variable](#variable)
     - [Constants](#constants)
   - [Data Types](#data-types)
-    - [Basic type](#basic-type)
     - [Aggregate type](#aggregate-type)
+      - [Basic type](#basic-type)
       - [Array](#array)
       - [Structs](#structs)
     - [Reference type](#reference-type)
@@ -59,6 +59,7 @@
       - [Functions](#functions)
         - [Basic function](#basic-function)
         - [Anonymous function](#anonymous-function)
+      - [Receiver function](#receiver-function)
     - [Interface type](#interface-type)
   - [Loops](#loops)
   - [Conditional Logic](#conditional-logic)
@@ -176,7 +177,9 @@ const (
 
 ## Data Types
 
-### Basic type
+### Aggregate type
+
+#### Basic type
 
 - **String**: `string`
 - **Integer**: `int`, `int8`, `int16`, `int32`, `int64`
@@ -195,8 +198,6 @@ num := byte('a')  // byte (alias for uint8)
 var u uint = 7        // uint (unsigned)
 var p float32 = 22.7  // 32-bit float
 ```
-
-### Aggregate type
 
 #### Array
 
@@ -369,6 +370,56 @@ var another_func = func(p, q string) string {
 }
 ```
 
+#### Receiver function
+
+> Receiver function is a function that **binds to a type** and associated with a object
+
+Syntax:
+
+```
+func (<receiver>) <function_name>(parameter_list) (return_type){
+  // code..
+
+  // Use return statement if return_type are given
+  // if return_type is not given, then do not
+  // use return statement
+  return
+}
+```
+
+```go
+type Student struct {
+  name string
+  age int
+}
+
+// Receiver func Format:
+// - Associate with student object (s Student)
+// - Return Formatted string
+func (s Student) format() string {
+  fs := "Student info:\n"
+  fs += "Name: " + s.name + "\n"
+  fs += "Age: " + strconv.Itoa(s.age)
+
+  return s.name
+}
+
+
+func main() {
+  student := Student{
+    name: "Quan",
+    age: 23,
+  }
+
+  fmt.Printf(student.format())
+}
+
+// Output:
+// Student info:
+// Name: Quan
+// Age: 23
+```
+
 ### Interface type
 
 > Interface is a **user-defined** type that contains a collection of method signatures.
@@ -377,38 +428,38 @@ Syntax: `type <interface-name> interface { <method-name> <return-type> }`
 
 ```go
 type Shape interface {
-  Area() float64
-  Perimeter() float64
+Area() float64
+Perimeter() float64
 }
 
 type Rectangle struct {
-  Length, Width float64
+Length, Width float64
 }
 
 type Square struct {
-  Width float64
+Width float64
 }
 
 func (r Rectangle) Area() float64 {
-  return r.Length * r.Width
+return r.Length * r.Width
 }
 
 func (s Square) Area() float64 {
-  return s.Width * s.Width
+return s.Width * s.Width
 }
 
 func main() {
-  r := Rectangle{
-    Length: 3,
-    Width: 4
-  }
+r := Rectangle{
+  Length: 3,
+  Width: 4
+}
 
-  s := Square{
-    Width: 5
-  }
+s := Square{
+  Width: 5
+}
 
-  fmt.Printf("Rectangle Area: ", r.Area())
-  fmt.Printf("Square Area: ", s.Area())
+fmt.Printf("Rectangle Area: ", r.Area())
+fmt.Printf("Square Area: ", s.Area())
 }
 
 // Output:
