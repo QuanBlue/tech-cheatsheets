@@ -61,7 +61,7 @@ Welcome to the Technology Cheat Sheets repository! This repository aims to provi
 - [Monitoring and Logging](https://github.com/quanblue/tech-cheatsheets/tree/master/Monitoring%20and%20Logging)
 - [Shell Scripting](https://github.com/quanblue/tech-cheatsheets/tree/master/Shell%20Scripting)
 - [Version Control](https://github.com/quanblue/tech-cheatsheets/tree/master/Version%20Control)
-- [Programming Language](https://github.com/quanblue/tech-cheatsheets/tree/master/Programming%Language)
+- [Programming Language](https://github.com/quanblue/tech-cheatsheets/tree/master/Programming%20Language)
 
 Each category folder contains cheat sheets related to that specific topic. Feel free to explore the folders and access the cheat sheets you need.
 
