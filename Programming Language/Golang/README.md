@@ -238,6 +238,7 @@ func main() {
   fmt.Printf("Student's age:", student.age)
 }
 
+// =======
 // Output:
 // Student: {Quan 20}
 // Student's name: Quan
@@ -414,6 +415,7 @@ func main() {
   fmt.Printf(student.format())
 }
 
+// =======
 // Output:
 // Student info:
 // Name: Quan
@@ -422,49 +424,51 @@ func main() {
 
 ### Interface type
 
-> Interface is a **user-defined** type that contains a collection of method signatures.
+> `Interface` is a **user-defined** type that contains a collection of **method (function)** signatures for a `group of types`.
+>
+> A `type` considered to be **implementing an interface** if it **implements all the methods** declared in the `interface`.
 
 Syntax: `type <interface-name> interface { <method-name> <return-type> }`
 
 ```go
+// Interface Shape
+// Define method Area() and Perimeter() for Shape (Rectangle, Square, Circle, ...)
 type Shape interface {
-Area() float64
-Perimeter() float64
+  Area() float64
 }
 
 type Rectangle struct {
-Length, Width float64
+  Length, Width float64
 }
 
 type Square struct {
-Width float64
+  Width float64
 }
 
 func (r Rectangle) Area() float64 {
-return r.Length * r.Width
+  return r.Length * r.Width
 }
 
 func (s Square) Area() float64 {
-return s.Width * s.Width
+  return s.Width * s.Width
+}
+
+func printShapeInfo(s Shape) {
+  fmt.Printf("Shape: %T has Area = %0.2f\n",s, s.Area())
 }
 
 func main() {
-r := Rectangle{
-  Length: 3,
-  Width: 4
+  r := Rectangle{Length: 3, Width: 4}
+  s := Square{Width: 5}
+
+  printShapeInfo(r)
+  printShapeInfo(s)
 }
 
-s := Square{
-  Width: 5
-}
-
-fmt.Printf("Rectangle Area: ", r.Area())
-fmt.Printf("Square Area: ", s.Area())
-}
-
+// =======
 // Output:
-// Rectangle Area: 12
-// Square Area: 25
+// Shape: main.Rectangle has Area = 12.00
+// Shape: main.Square has Area = 25.00
 ```
 
 ## Loops
@@ -736,6 +740,7 @@ func main() {
   }
 }
 
+// =======
 // Output:
 // Cannot divide a number by zero
 ```
@@ -762,6 +767,7 @@ func main() {
   fmt.Println("Working...")
 }
 
+// =======
 // Output: Working...Done
 ```
 
@@ -790,6 +796,7 @@ func main() {
   division(2, 8)
 }
 
+// =======
 // Output:
 // Result: 2
 // panic: Cannot divide a number by zero
@@ -833,6 +840,7 @@ func main() {
   division(2, 8)
 }
 
+// =======
 // Output:
 // Result:  2
 // RECOVER Cannot divide a number by zero
