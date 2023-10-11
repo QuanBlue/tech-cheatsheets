@@ -86,6 +86,7 @@
     - [Panic](#panic)
     - [Recover](#recover)
 - [FAQ](#faq)
+- [Useful document](#useful-document)
 - [Credits](#credits)
 </details>
 
@@ -1149,6 +1150,13 @@ func main() {
 1. What is different between `:=` and `=` in Golang?
    - **`:=`** is for `declaration + assignment`
    - **`=`** is for `assignment` only.
+
+# Useful document
+
+- [Effective Go](https://go.dev/doc/effective_go)
+- [Uber Go Style Guide](https://github.com/uber-go/guide/blob/master/style.md)
+- [Go Common Mistakes](https://github.com/golang/go/wiki/CommonMistakes)
+- [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments)
 
 # Credits
 
