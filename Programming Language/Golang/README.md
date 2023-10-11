@@ -54,12 +54,13 @@
       - [Structs](#structs)
     - [Reference type](#reference-type)
       - [Pointer](#pointer)
-      - [Slide](#slide)
+      - [Slice](#slice)
       - [Map](#map)
       - [Functions](#functions)
         - [Basic function](#basic-function)
         - [Anonymous function](#anonymous-function)
-      - [Receiver function](#receiver-function)
+        - [Receiver function](#receiver-function)
+      - [Channel](#channel)
     - [Interface type](#interface-type)
   - [Loops](#loops)
   - [Conditional Logic](#conditional-logic)
@@ -71,6 +72,14 @@
       - [Export package](#export-package)
     - [Go Package](#go-package)
     - [Go Module](#go-module)
+  - [Concurrency](#concurrency)
+    - [Goroutine](#goroutine)
+      - [Synchronized Goroutines](#synchronized-goroutines)
+    - [Channel](#channel-1)
+      - [Unbuffered channel](#unbuffered-channel)
+      - [Buffered channel](#buffered-channel)
+      - [Close channel](#close-channel)
+      - [Select channel](#select-channel)
   - [Error handling](#error-handling)
     - [Error](#error)
     - [Defer](#defer)
@@ -266,7 +275,7 @@ a := new(int)
 var b *int = &a
 ```
 
-#### Slide
+#### Slice
 
 > Slice is a **dynamic-length** sequence of elements of a single type.
 
@@ -371,7 +380,7 @@ var another_func = func(p, q string) string {
 }
 ```
 
-#### Receiver function
+##### Receiver function
 
 > Receiver function is a function that **binds to a type** and associated with a object
 
@@ -405,7 +414,6 @@ func (s Student) format() string {
   return s.name
 }
 
-
 func main() {
   student := Student{
     name: "Quan",
@@ -421,6 +429,10 @@ func main() {
 // Name: Quan
 // Age: 23
 ```
+
+#### Channel
+
+Move to [Channel](#channel-1)
 
 ### Interface type
 
@@ -714,6 +726,291 @@ Run `main.go`
 ```bash
 $ go run main.go
 Hello, world!
+```
+
+## Concurrency
+
+> `Concurrency` is the ability to **run multiple programs or parts of a program in parallel**. `Concurrency` is achieved by using `goroutines` and `channels` in Go.
+>
+> `Concurrency` split task into smaller subtasks and run them in order assigned by the scheduler. It run in 1 CPU core while `Parallelism` run in multiple CPU cores.
+
+![Concurrency](./../assets/concurrency.png)
+
+### Goroutine
+
+> `Goroutine` is a **lightweight, independently executing thread of control** within a Go program. It's _not a thread in the traditional sense_; it's **a function that runs concurrently with other Goroutines in the same address space**.
+
+Syntax: `go <function_name>(<arguments>)`
+
+```go
+func push(name string) {
+  msg := "Hey, " + name
+  fmt.Println(msg)
+}
+
+func main() {
+  fmt.Println("Begin")
+
+  // Start concurrent routines
+  go push("Moe")
+  go push("Larry")
+  go push("Curly")
+
+  fmt.Println("End")
+}
+
+// The order in which Goroutines execute is not guaranteed,
+// and it depends on the Go runtime's scheduling. Therefore,
+// you cannot predict with certainty whether the MAIN Goroutine
+// or the PUSH Goroutine will start executing first.
+// *(Main func still a main goroutine)
+// =======
+// Output 1:
+//    Hey, Larry
+//    Begin
+//    Hey, Moe
+//    End
+// =======
+// Output 2:
+//    Hey, Curly
+//    Hey, Larry
+//    Hey, Moe
+//    Begin
+//    End
+// =======
+// Output 3...
+```
+
+#### Synchronized Goroutines
+
+> `Synchronized Goroutines` is a goroutine that **waits for another goroutine to finish** before it can continue its execution.
+
+Use: [WaitGroup](https://pkg.go.dev/sync#WaitGroup)
+
+> A WaitGroup waits for a collection of goroutines to finish. The main goroutine calls `Add` to set the number of goroutines to wait for. The goroutine calls `wg.Done()` when it finishes
+
+Syntax:
+
+- Create a new WaitGroup: `var wg sync.WaitGroup`
+- Add goroutines to WaitGroup: `wg.Add(<number-of-goroutines>)`
+- Wait for all goroutines to finish executing: `wg.Wait()`
+- Notify the WaitGroup that this goroutine is done: `wg.Done()`
+
+```go
+func push(name string) {
+  msg := "Hey, " + name
+  fmt.Println(msg)
+
+  // Notify the WaitGroup that this goroutine is done
+  // If not have this line, the program will be terminated
+  // with error: fatal error: all goroutines are asleep - deadlock!
+  wg.Done()
+}
+
+func main() {
+  // Create a new WaitGroup
+  var wg sync.WaitGroup
+
+  fmt.Println("Begin")
+
+  // Add 3 goroutines to the WaitGroup
+  wg.Add(3)
+
+  // Start concurrent routines
+  go push("Moe")
+  go push("Larry")
+  go push("Curly")
+
+  // Wait for all goroutines to finish executing
+  wg.Wait()
+
+  fmt.Println("End")
+}
+
+// Since we use WaitGroup, the MAIN Goroutine will run as order:
+// Step 1: print "Begin"
+// Step 2: wait for all PUSH Goroutines to finish executing.
+//    * order of PUSH Goroutines is not guaranteed (depend on scheduler)
+// Step 3: print "End"
+// =======
+// Output 1:
+//    Begin
+//    Hey, Larry
+//    Hey, Moe
+//    Hey, Curly
+//    End
+// =======
+// Output 2:
+//    Begin
+//    Hey, Curly
+//    Hey, Larry
+//    Hey, Moe
+//    End
+// =======
+// Output 3...
+```
+
+### Channel
+
+> Channel is a medium through which goroutines communicate with each other. It is a typed conduit through which you can send and receive values with the channel operator, <-. The data flows in the direction of the arrow.
+>
+> Channel store data in **`FIFO` (First In First Out)** order.
+>
+> Channel Include 2 types: **Unbuffered channel** and **Buffered channel**
+
+#### Unbuffered channel
+
+> - **Unbuffered channel**: An unbuffered channel is a channel without a buffer. It means that the channel can hold only one value.
+
+Syntax:
+
+- Create channel: `<channel-name> := make(chan <type>)`
+- Assign value to channel: `<channel-name> <- <value>`
+
+```go
+func push(name string, ch chan string) {
+  msg := "Hey, " + name
+  ch <- msg
+}
+
+func main() {
+  // Create a new channel
+  ch := make(chan string)
+
+  // Start concurrent routines
+  go push("Moe", ch)
+  go push("Larry", ch)
+  go push("Curly", ch)
+
+  // Read from channel
+  fmt.Println(<-ch, <-ch, <-ch)
+}
+
+// =======
+// Output: Hey, Moe Hey, Larry Hey, Curly
+// *Note: order of PUSH Goroutines is not guaranteed (depend on scheduler)
+```
+
+#### Buffered channel
+
+> - **Buffered channel**: A buffered channel is a channel with a buffer. It means that the channel can hold a limited number of values.
+
+Syntax:
+
+- Create channel: `<channel-name> := make(chan <type>, <capacity>)`
+- Assign value to channel: `<channel-name> <- <value>`
+
+> **Note:** Buffered channel can be used as unbuffered channel by setting capacity = 0
+>
+> Example: `ch := make(chan int, 0)`
+
+```go
+func main() {
+  // Create a new channel
+  ch := make(chan int, 2)
+
+  // Start concurrent routines
+  ch <- 1
+  ch <- 2
+
+  // Uncomment bellow code cause Deadlock
+  // Because channel capacity is 2, so it can hold only 2 values (Moe, Larry)
+  // ch <- 3
+
+  // Read from channel
+  // Output: Moe Larry
+  fmt.Println(<-ch, <-ch)
+
+  // Uncomment bellow code cause Deadlock
+  // Because channel capacity is 2, not have third value to read
+  // fmt.Println(<-ch, <-ch, <-ch)
+}
+
+// =======
+// Output: 1 2
+// *Note: channel store data in FIFO order
+```
+
+#### Close channel
+
+> - **Close channel**: A channel can be closed to indicate that no more values will be sent. It is used to prevent the goroutines from blocking forever waiting for values to be sent on the channel.
+
+Syntax: `close(<channel-name>)`
+
+```go
+func main() {
+  // Create a new channel
+  ch := make(chan int, 2)
+
+  // Start concurrent routines
+  ch <- 1
+  ch <- 2
+
+  close(ch)
+
+  // Read from channel
+  fmt.Println(<-ch, <-ch, <-ch, <-ch, <-ch)
+}
+
+// =======
+// Output: 1 2 0 0 0
+// *Note: 0 is default value of int
+```
+
+#### Select channel
+
+> **Select channel**: A select statement is used to choose from multiple send/receive `channel` operations.
+>
+> - It blocks until one of the send/receive operation is ready.
+> - If multiple operations are ready, one of them is chosen at random.
+
+Syntax:
+
+```txt
+select {
+  case <-<channel-1>:
+    <do something>
+  case <-<channel-2>:
+    <do something>
+  <case...>
+  default:
+		<do something>
+}
+```
+
+```go
+func main() {
+    c1 := make(chan string)
+    c2 := make(chan string)
+
+    // channel 1 receive value after 1 seconds
+    go func() {
+        time.Sleep(1 * time.Second)
+        c1 <- "one"
+    }()
+
+    // channel 2 receive value after 2 seconds
+    go func() {
+        time.Sleep(2 * time.Second)
+        c2 <- "two"
+    }()
+
+    // Use SELECT to await both of these values simultaneously
+    // Printing each one as it arrives.
+    for i := 0; i < 2; i++ {
+        select {
+          case msg1 := <-c1:
+              fmt.Println("received", msg1)
+          case msg2 := <-c2:
+              fmt.Println("received", msg2)
+        }
+    }
+}
+
+// =======
+// Output:
+// received one
+// received two
 ```
 
 ## Error handling
